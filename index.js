@@ -17,9 +17,8 @@ app.get('/out', function(req, res){
  
 io.on('connection', function(socket){
   var name = 'U' + (socket.id).toString().substr(1,4);
-  socket.emit('user connected', name);
-  socket.on('button clicked', function(value){
-    io.emit('button clicked', name, value);
+  socket.on('button clicked', function(val){
+    io.emit('button clicked', val);
   });
 });
 

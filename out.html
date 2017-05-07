@@ -20,28 +20,26 @@
             var data = {
               images: ["https://opengameart.org/sites/default/files/Spritesheet_0.PNG"],
               frames: {width: 88, height: 80, count: 5}
-			  
             };
           var spriteSheet = new createjs.SpriteSheet(data);
           var sprite = new createjs.Sprite(spriteSheet, 1);
           stage.addChild(sprite);
-            sprite.x = canvas.width/2 - 44;
-            sprite.y = canvas.height/2 - 40;
+            sprite.x = canvas.width/2 -60;
+            sprite.y = canvas.height/2 -60;
             createjs.Ticker.addEventListener("tick", onTickHandler);
           function onTickHandler(evt) {   
             stage.update();
           };
-		  
           window.addEventListener('resize', onResize, false);
             onResize();
             function onResize() {
-              canvas.width = window.innerWidth - 44;
-              canvas.height = window.innerHeight - 40;
-              sprite.x = canvas.width/2 - 44;
-              sprite.y = canvas.height/2 - 40;
+              canvas.width = window.innerWidth-50;
+              canvas.height = window.innerHeight-50;
+              sprite.x = canvas.width/2 -60;
+              sprite.y = canvas.height/2 -60;
             };
-          socket.on('button clicked', function(value){
-            sprite.x + = value;        
+          socket.on('button clicked', function(val){
+            sprite.x += val;        
           });
     </script>
   </body>
